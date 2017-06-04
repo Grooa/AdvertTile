@@ -1,0 +1,113 @@
+
+/**
+ * skin: DEFAULT
+ */
+.card {
+    background-color: rgb(245, 245, 245);
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    box-sizing: border-box;
+
+    cursor: default;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    height: 13em;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    position: relative;
+
+    text-align: left;
+    transition: all .2s ease;
+
+    width: 10em;
+}
+
+.card:hover {
+    box-shadow: rgba(0, 0, 0, .1) 1px 1px 3px;
+}
+
+.card a {
+    cursor: pointer;
+
+    text-decoration: none;
+}
+
+.card h4,
+.card em{
+    margin: 0;
+    padding: 0 .5em;
+}
+
+.card em {
+    font-size: 0.8em;
+}
+
+.card .profile-image {
+    background-color: #FFF;
+
+    height: 6.5em;
+
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.card .profile-image img {
+    left: -5%;
+    height: 110%;
+}
+
+.card .readmore {
+    border:none;
+
+    width: 100%;
+}
+
+/**
+ * skin: SMALL
+ *
+ **/
+.card.small {
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+
+    height: 4rem;
+
+    padding: .2rem;
+}
+
+.card.small .profile-image {
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+
+    flex-shrink: 0;
+
+}
+
+.card.small .profile-image > img {
+    height: auto;
+    top: -5%;
+    width: 110%;
+}
+
+.card.small .metadata {
+    box-sizing: border-box;
+
+    font-size: 0.9em;
+
+    padding-left: .2rem;
+}
+
+.card.small em, .card.small h4 {
+    padding: 0 0;
+}
