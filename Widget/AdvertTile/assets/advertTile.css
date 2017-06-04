@@ -2,7 +2,7 @@
 /**
  * skin: DEFAULT
  */
-.card {
+.classified-tile {
     background-color: rgb(245, 245, 245);
     border: 1px solid #CCC;
     border-radius: 2px;
@@ -14,9 +14,9 @@
 
     flex-direction: column;
 
-    justify-content: space-between;
+    justify-content: flex-start;
 
-    height: 13em;
+    height: 18em;
 
     margin: 0 auto;
 
@@ -27,55 +27,142 @@
     text-align: left;
     transition: all .2s ease;
 
-    width: 10em;
+    width: 15em;
 }
 
-.card:hover {
+.classified-tile:hover {
     box-shadow: rgba(0, 0, 0, .1) 1px 1px 3px;
 }
 
-.card a {
+
+.classified-tile a {
     cursor: pointer;
 
     text-decoration: none;
 }
 
-.card h4,
-.card em{
+.classified-tile h4,
+.classified-tile .description{
     margin: 0;
-    padding: 0 .5em;
+    padding: .2em .5em;
 }
 
-.card em {
+
+.classified-tile h4 {
+    font-size: 1.1em;
+    text-align: center;
+}
+
+/**
+ * Price
+ */
+.classified-tile .price {
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.classified-tile .description {
+
+}
+
+.classified-tile .description > p {
+    padding: 0;
+
+}
+
+
+/**
+ * ========== Buttons ==========
+ */
+.classified-tile .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+/**
+ * PayPal
+ */
+.classified-tile .paypal {
+    flex: 1;
+}
+
+.classified-tile .paypal > button {
+    align-items: center;
+
+    background-color: #3b7bbf; /* The light PayPal-color */
+    border: 0;
+
+    color: #FFF;
+
+    display: inline-flex;
+
+    font-size: 0.8em;
+
+    height: 100%;
+
+    justify-content: center;
+
+    vertical-align: middle;
+
+    text-align: center;
+}
+
+.classified-tile .paypal > button:hover {
+    background-color: #3F83CC;
+}
+
+.classified-tile .paypal > button > svg {
+    margin-right: .5em;
+}
+
+/**
+ * Read more
+ */
+.classified-tile .readmore {
+    border: 0;
+    flex-grow: 1;
+    flex-basis: 0;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 100%;
+}
+
+/**
+ * Description
+ */
+.classified-tile .description {
     font-size: 0.8em;
 }
 
-.card .profile-image {
+.classified-tile .thumbnail {
     background-color: #FFF;
-
-    height: 6.5em;
+    display: flex;
+    justify-content: center;
+    height: 8em;
 
     width: 100%;
 
     overflow: hidden;
 }
 
-.card .profile-image img {
+.classified-tile .thumbnail img {
     left: -5%;
     height: 110%;
 }
 
-.card .readmore {
-    border:none;
-
-    width: 100%;
+.classified-tile .price {
+    margin-top: auto;
 }
 
 /**
  * skin: SMALL
  *
  **/
-.card.small {
+.classified-tile.small {
     align-items: center;
     flex-direction: row;
     justify-content: center;
@@ -85,7 +172,7 @@
     padding: .2rem;
 }
 
-.card.small .profile-image {
+.classified-tile.small .thumbnail {
     border-radius: 50%;
     height: 3rem;
     width: 3rem;
@@ -94,13 +181,13 @@
 
 }
 
-.card.small .profile-image > img {
+.classified-tile.small .thumbnail > img {
     height: auto;
     top: -5%;
     width: 110%;
 }
 
-.card.small .metadata {
+.classified-tile.small .metadata {
     box-sizing: border-box;
 
     font-size: 0.9em;
@@ -108,6 +195,6 @@
     padding-left: .2rem;
 }
 
-.card.small em, .card.small h4 {
+.classified-tile.small em, .classified-tile.small h4 {
     padding: 0 0;
 }

@@ -102,40 +102,69 @@ class AdminController
 
 
         //ADD YOUR OWN FIELDS
+        $nameField = new \Ip\Form\Field\Text([
+            'name' => 'title',
+            'label' => 'Title',
+            'value' => !empty($widgetData['title']) ? $widgetData['title'] : null
+        ]);
+        $nameField->addValidator('Required');
+
         $urlField = new \Ip\Form\Field\Url([
             'name' => 'url',
-            'label' => 'Page',
+            'label' => 'Information page',
             'value' => !empty($widgetData['url']) ? $widgetData['url'] : null,
             'default' => null
         ]);
 
-        $nameField = new \Ip\Form\Field\Text([
-            'name' => 'name',
-            'label' => 'Name',
-            'value' => !empty($widgetData['name']) ? $widgetData['name'] : null
+        $payPalUrlField = new \Ip\Form\Field\Text([
+            'name' => 'paypal',
+            'label' => 'PayPal Id',
+            'note' => 'The value located in the input-field "hosted_button_id"',
+            'value' => !empty($widgetData['paypal']) ? $widgetData['paypal'] : null,
+            'default' => null
         ]);
-        $nameField->addValidator('Required');
 
-        $posField = new \Ip\Form\Field\Text([
-            'name' => 'position',
-            'label' => 'Position',
-            'value' => !empty($widgetData['position']) ? $widgetData['position'] : null
+        $descriptionField = new \Ip\Form\Field\RichText([
+            'name' => 'description',
+            'label' => 'Description',
+            'note' => 'Short description of the product.',
+            'value' => !empty($widgetData['description']) ? $widgetData['description'] : null
+        ]);
+
+        $priceField = new \Ip\Form\Field\Text([
+            'name' => 'price',
+            'label' => 'Price',
+            'value' => !empty($widgetData['price']) ? $widgetData['price'] : null
         ]);
 
         $imgField = new \Ip\Form\Field\RepositoryFile([
             'name' => 'img',
-            'label' => 'Profile photo',
+            'label' => 'Thumbnail',
             'value' => !empty($widgetData['img']) ? $widgetData['img'] : null,
             'preview' => 'thumbnails', //or list. This defines how files have to be displayed in the repository browser
             'fileLimit' => 1, //optional. Limit file count that can be selected. -1 For unlimited
             'filterExtensions' => array('jpg', 'jpeg', 'png') //optional
         ]);
 
+        $apendixField = new \Ip\Form\Field\RepositoryFile([
+            'name' => 'apendix',
+            'label' => 'Apendix',
+            'note' => 'Hidden behind the Read more button (will override Information page)',
+            'value' => !empty($widgetData['apendix']) ? $widgetData['apendix'] : null,
+            'preview' => 'list', //or list. This defines how files have to be displayed in the repository browser
+            'fileLimit' => 1 //optional. Limit file count that can be selected. -1 For unlimited
+            //'filterExtensions' => array('jpg', 'jpeg', 'png') //optional
+        ]);
+
         // Register fields to form
-        $form->addField($field);
-        $form->addField($urlField);
+        $form->addField($field); // Keep at top
+
         $form->addField($nameField);
-        $form->addField($posField);
+        $form->addField($priceField);
+        $form->addField($descriptionField);
+        $form->addField($apendixField);
+        $form->addField($urlField);
+        $form->addField($payPalUrlField);
         $form->addField($imgField);
 
         return $form;
