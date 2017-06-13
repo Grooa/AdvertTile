@@ -78,28 +78,6 @@ class AdminController
                 'value' => 'AdvertTile.checkForm'
             )
         );
-        $form->addField($field);
-
-        //Input fields to adjust widget settings
-
-//        $field = new \Ip\Form\Field\Text(
-//            array(
-//                'name' => 'title',
-//                'label' => 'Title',
-//                'value' => empty($widgetData['title']) ? null : $widgetData['title']
-//            )
-//        );
-//        $field->addValidator('Required');
-//        $form->addField($field);
-//
-//        $field = new \Ip\Form\Field\Textarea(
-//            array(
-//                'name' => 'text',
-//                'label' => 'Text',
-//                'value' => empty($widgetData['text']) ? null : $widgetData['text']
-//            )
-//        );
-
 
         //ADD YOUR OWN FIELDS
         $nameField = new \Ip\Form\Field\Text([
