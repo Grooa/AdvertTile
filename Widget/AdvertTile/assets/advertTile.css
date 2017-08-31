@@ -3,8 +3,7 @@
  * skin: DEFAULT
  */
 .classified-tile {
-    background-color: rgb(245, 245, 245);
-    border: 1px solid #CCC;
+    background-color: #FFF;
     border-radius: 2px;
     box-sizing: border-box;
 
@@ -16,9 +15,10 @@
 
     justify-content: flex-start;
 
-    height: 18em;
+    height: auto;
 
     margin: 0 auto;
+    max-height: 20em;
 
     overflow: hidden;
 
@@ -27,7 +27,7 @@
     text-align: left;
     transition: all .2s ease;
 
-    width: 15em;
+    width: 100%;
 }
 
 .classified-tile:hover {
@@ -44,7 +44,7 @@
 .classified-tile h4,
 .classified-tile .description{
     margin: 0;
-    padding: .2em .5em;
+    padding: 0 .5em;
 }
 
 
@@ -58,16 +58,17 @@
  */
 .classified-tile .price {
     text-align: center;
-    font-size: 0.9em;
+    font-size: 1.2em;
+
+    padding-top: .5em;
 }
 
 .classified-tile .description {
-
+    white-space: pre-wrap;
 }
 
 .classified-tile .description > p {
     padding: 0;
-
 }
 
 

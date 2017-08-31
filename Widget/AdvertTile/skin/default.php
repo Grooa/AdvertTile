@@ -10,16 +10,17 @@ ipAddCss('../assets/advertTile.css');
         </div>
     <?php endif; ?>
 
+    <?php if (!empty($title)): ?>
     <h4 id="profileName"
         class="name"
         style="<?= empty($img) ? 'margin-top: 1em' : '' ?>">
 
-        <?php echo isset($title) && $title != '' ? $title : '[missing title]' ?>
+        <?= $title ?>
     </h4>
+    <? endif; ?>
 
     <?php if (isset($description) && !empty($description)): ?>
-        <div class="description"
-             style="<?= empty($img) ? 'margin-top: 1em' : '' ?>">
+        <div class="description">
             <?= $description ?>
         </div>
     <?php endif; ?>

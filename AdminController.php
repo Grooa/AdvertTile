@@ -85,7 +85,6 @@ class AdminController
             'label' => 'Title',
             'value' => !empty($widgetData['title']) ? $widgetData['title'] : null
         ]);
-        $nameField->addValidator('Required');
 
         $urlField = new \Ip\Form\Field\Url([
             'name' => 'url',
