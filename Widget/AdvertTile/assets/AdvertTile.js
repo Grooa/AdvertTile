@@ -1,4 +1,4 @@
-var name = 'AdvertTile';
+var advertWidgetName = 'AdvertTile';
 
 IpWidget_AdvertTile = function () {
     this.widgetObject = null;
@@ -58,9 +58,10 @@ IpWidget_AdvertTile = function () {
         var context = this; // store current context for $.proxy bellow. http://api.jquery.com/jquery.proxy/
         $('#ipWidgetSkeletonPopup').remove(); //remove any existing popup. This could happen if other widget is in management state right now.
 
+
         //get popup HTML using AJAX. See AdminController.php widgetPopupHtml function
         var data = {
-            aa: name + '.widgetPopupHtml',
+            aa: advertWidgetName + '.widgetPopupHtml',
             securityToken: ip.securityToken,
             widgetId: this.widgetObject.data('widgetid')
         };
